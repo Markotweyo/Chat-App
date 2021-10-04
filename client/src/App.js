@@ -1,14 +1,25 @@
-import logo from './logo.svg';
-import './App.css';
+import React from 'react'
+import {StreamChat} from 'stream-chat'
+import {Chat} from 'stream-chat-react'
+import Cookies from 'universal-cookie'
+import {ChannelContainer, ChannelListContainer} from './components'
+import './App.css'
 
-function App() {
+const apiKey ='h72rd5zh39z6'
+
+const client= StreamChat.getInstance(apiKey)
+
+const App = () => {
   return (
-    <div className="App">
-      <header className="App-header">
-        Medical Pager
-      </header>
+    <div className='app__wrapper'>
+      <Chat client={client} theme= 'team light'>
+        <ChannelListContainer/>
+        <ChannelContainer/>
+        
+      </Chat>
     </div>
-  );
+  )
 }
 
-export default App;
+export default App
+
