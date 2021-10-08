@@ -1,13 +1,15 @@
 import React, {useState, useEffect} from 'react'
 import {SearchIcon} from '../assets/SearchIcon'
-import { ResultsDropdown } from '.'
+import { ResultsDropdown } from './'
 import {useChatContext} from 'stream-chat-react'
 
 const ChannelSearch = ({ setToggleContainer }) => {
+    const {client}= useChatContext()
     const [query, setQuery] = useState('')
     const [loading, setLoading] = useState(false)
     const [teamChannels, setTeamChannels] = useState([])
     const [directChannels, setDirectChannels] = useState([])
+
     useEffect(() => {
         if(!query) {
             setTeamChannels([]);

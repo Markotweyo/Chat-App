@@ -1,7 +1,7 @@
 import React, {useState} from 'react'
 import { ChannelList, useChatContext} from 'stream-chat-react'
 import Cookies from 'universal-cookie'
-import { ChannelSearch, TeamChannelList, TeamChannelPreview } from './'
+import { ChannelSearch, TeamChannelList, TeamChannelPreview } from '.'
 import HospitalIcon from '../assets/hospital.png'
 import LogoutIcon from '../assets/logout.png'
 
@@ -136,9 +136,8 @@ export const ChannelListContainer = ({ setCreateType, setIsCreating, setIsEditin
             </div>
             <div className="channel-list__container-responsive"
              style={{left: toggleContainer ? "0%" : "-89%", backgroundColor: "#005fff" }}>
-
-            </div>
-            <div className="channel-list__container-toggle" 
+                
+             <div className="channel-list__container-toggle" 
                 onClick={()=>setToggleContainer((prevToggleContainer=>!prevToggleContainer)
             )}>
             </div>
@@ -148,6 +147,9 @@ export const ChannelListContainer = ({ setCreateType, setIsCreating, setIsEditin
                 setIsEditing={setIsEditing}
                 setToggleContainer={setToggleContainer}
                 />
+
+            </div>
+            
         </>
     )
 }
